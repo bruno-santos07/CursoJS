@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+   <form action="">
+           <p>
+               <label for="n1">N1:</label>
+               <input name="n1" id="n1" type="text">
+           </p>
+
+           <p>
+               <label for="n2">N2:</label>
+               <input name="n2" id="n2" type="text">
+           </p>
+
+           <p>
+            <input type="button" value="Somar" onclick="somar()"> <!-- Quando eu clicar em ONCLICK vai chamar a função somar no meu JavaScript -->
+            <input type="button" value="subtrair" onclick="subtrair()">
+
+            <input type="reset"  value="Limpar">
+           </p>
+
+           <h2 id="resultado">Resultado:</h2>
+
+           <script>
+
+            function subtrair(){
+                const n1 = document.getElementById('n1').value
+                const n2 = document.getElementById('n2').value
+
+                const subtrair = Number(n1) - Number(n2)
+
+                const resultado = document.getElementById('resultado')
+
+                resultado.innerHTML = (`Resultado desta Operação: ${subtrair}`)
+            }
+
+            function somar(){
+               const n1 = document.getElementById('n1').value
+               const n2 = document.getElementById('n2').value
+               
+               const soma = Number(n1) + Number(n2)
+               
+               const resultado = document.getElementById('resultado')
+
+               resultado.innerHTML = (`A soma dos números é: ${soma}`)
+            }
+
+            
+           </script>
+
+
+
+
+</body>
+</html>
