@@ -10,16 +10,44 @@
             color: white;
             font: normal 18pt arial;
         }
+
+        h1, div, .p, .p1{
+            color: black;
+        }
+        
+        
     </style>
 </head>
 <body>
     <h1>Iniciando estudos com DOM</h1>
-    <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar ooo <strong>DOM</strong> em JavaScript. </p>
-    <div>Clique em mim</div>
+    <p class="p" name="p">Aqui vai o resultado </p>
+    <p class="p1" name="p1">Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div><br>
+
     
     <script>
-        
+       // let classe = 'divisora'
+       // let div = document.getElementsByClassName(classe)[0]
+       // document.write(div.innerText)
+       // div.style.color = 'yellow'
+
+       // let h1 = window.document.getElementsByTagName('h1')[0]
+       // window.document.write(h1.innerText)
+       // h1.style.color = 'yellow'
+
+       // let p = window.document.getElementsByTagName('p')[0]
+       // window.document.write(p.innerText)
+       // p.style.color = 'yellow'
+
+       // let p1 = window.document.getElementsByTagName('p')[1] // Aqui [0] está marcando o paragrafo que ficar visivel
+      //  window.document.write(p1.innerHTML)  // aqui (p1.innerText) junto com o a linha completa é para ficar visivel dentro da pagina HTML
+       // p1.style.color = 'yellow'
+
+       let p = document.getElementById('msg')
+       p.style.background = 'green'
+       p.style.color = 'white'
+       p.innerHTML = 'Estou aguardando...'
+
     </script>
 </body>
 </html>
