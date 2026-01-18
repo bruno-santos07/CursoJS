@@ -21,8 +21,10 @@
 <body>
     <h1>Iniciando estudos com DOM</h1>
     <p class="p" name="p">Aqui vai o resultado </p>
-    <p class="p1" name="p1">Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <p class="p1" id="ver" name="p1">Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
     <div id="msg">Clique em mim</div><br>
+    <div id="msg1">Clique em mim</div><br>
+    <div id="msg2">Clique em mim</div><br>
 
     
     <script>
@@ -43,10 +45,14 @@
       //  window.document.write(p1.innerHTML)  // aqui (p1.innerText) junto com o a linha completa é para ficar visivel dentro da pagina HTML
        // p1.style.color = 'yellow'
 
-       let p = document.getElementById('msg')
-       p.style.background = 'green'
-       p.style.color = 'white'
-       p.innerHTML = 'Estou aguardando...'
+       let ver = document.getElementById('ver');
+       ver.style.color = 'yellow';
+       let msg = document.getElementById('msg');
+       msg.style.color = 'yellow';
+       let msg1 = document.getElementById('msg1');
+       msg1.style.color = 'yellow';
+       let msg2 = document.getElementById('msg2');
+       msg2.style.color = 'yellow';
 
     </script>
 </body>
