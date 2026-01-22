@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio JavaScript</title>
+</head>
+<body>
+    <h1 id="msg">O nome digitado foi: </h1>
+
+    <script>
+        let nome = prompt('Digite seu nome:')
+        let msg = document.getElementById('msg')
+
+        msg.innerText = `O nome digitado foi: ${nome}`
+        msg.style.color = 'red'
+
+    </script>
+</body>
+</html>

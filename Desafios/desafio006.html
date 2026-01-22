@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora JS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 24pt;
+        }
+        p {
+            font-size: 20pt;
+            padding: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Calculadora Simples</h1>
+<p id="resultado">O resultado aparecerá aqui</p>
+
+<script>
+    // Perguntar números
+    let num1 = Number(prompt('Digite o primeiro número:'))
+    let num2 = Number(prompt('Digite o segundo número:'))
+
+    // Perguntar operação
+    let operacao = prompt('Qual operação deseja fazer? (+, -, *, /)')
+
+    let resultado = 0
+    let res = document.getElementById('resultado')
+
+    // Realizar operação
+    if(operacao === '+'){
+        resultado = num1 + num2
+        res.style.color = 'green'
+    } else if(operacao === '-'){
+        resultado = num1 - num2
+        res.style.color = 'red'
+    } else if(operacao === '*'){
+        resultado = num1 * num2
+        res.style.color = 'blue'
+    } else if(operacao === '/'){
+        if(num2 === 0){
+            res.innerText = 'Erro: divisão por zero!'
+            res.style.color = 'black'
+        } else{
+            resultado = num1 / num2
+            res.style.color = 'orange'
+        }
+    } else {
+        res.innerText = 'Operação inválida!'
+        res.style.color = 'black'
+    }
+
+    // Mostrar resultado (apenas se operação válida e não divisão por zero)
+    if(operacao === '+' || operacao === '-' || operacao === '*' || (operacao === '/' && num2 !== 0)){
+        res.innerText = `O resultado de ${num1} ${operacao} ${num2} é: ${resultado}`
+    }
+</script>
+
+</body>
+</html>

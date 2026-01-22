@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 02 - JavaScript</title>
+    <style>
+        h1{
+            background-color: #333;
+            color: black;
+            font: normal, Arial, 20pt;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="msg">Nome que você digitou:</h1>
+
+    <script>
+   let nome = prompt('Digite seu nome:')
+    let msg = document.getElementById('msg')
+
+    nome = nome.trim().toLowerCase()
+
+    msg.innerHTML = `Nome que você digitou foi: ${nome}`
+
+    if (nome == 'ana') {
+        msg.style.color = 'pink'
+    } else {
+        msg.style.color = 'white'
+    }
+    </script>
+</body>
+</html>

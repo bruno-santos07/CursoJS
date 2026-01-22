@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - 005</title>
+</head>
+<body>
+    <h1>Aqui estão suas informações!</h1>
+
+    <p id="msg">Olá,</p>
+    <p id="msg1">Você tem</p>
+
+    
+    <script>
+        const nome = prompt('Digite seu nome:')
+        const idade = prompt('Digite sua idade:')
+
+        let msg = window.document.getElementById('msg')
+        let msg1 = window.document.getElementById('msg1')
+
+        msg.innerHTML = (`Olá, ${nome}`)
+        msg1.innerHTML = (`Você tem ${idade} anos!`)
+
+        if(nome.toLowerCase() === 'Ana'){
+            msg.style.color = 'pink'
+        }else if(nome.toLowerCase() === 'Bruno'){
+            msg.style.color = 'blue'
+        }else{
+            msg.style.color = 'black'
+        }
+
+        if(idade >= 18){
+            msg1.style.color = 'green'
+            msg1.style.background = 'babyblue'
+            msg1.style.padding = '5px'
+            msg1.style.display = 'inline-block'
+        }else {
+            msg1.style.color = 'red'
+            msg1.style.background = 'yellow'
+            msg1.style.padding = '5px'
+            msg1.style.display = 'inline-block'
+        }
+
+    </script>
+</body>
+</html>
