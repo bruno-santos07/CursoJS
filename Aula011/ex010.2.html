@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Velocidade</title>
+</head>
+<body>
+    <h1>Consulte aqui sua Velocidade</h1>
+    Velocidade atiginda: <input type="number" name="vel" id="vel" placeholder="Digite a velocidade"> Km/h
+    <input type="button" value="Consultar" onclick="consultar()">
+    <div id="res"></div>
+
+    <script>
+        let velocidade = window.document.getElementById('vel')
+
+        function consultar(){
+          let consultar = Number(velocidade.value)
+          let res = window.document.getElementById('res')
+          res.innerHTML = `<p>Velocidade atingida por você foi de:<strong> ${consultar}</strong> Km/h</p>`
+
+          if(consultar > 0 && consultar <= 60){
+            res.innerHTML += `<strong><p>Velocidade dentro do limite!</p></strong>`
+          }else if(consultar >= 61 && consultar <= 80){
+            res.innerHTML += `<strong><p>Velocidade acima do permitido!</p></strong>`
+          }else if(consultar > 80){
+            res.innerHTML += `<strong>Você está muito rápido! Multa!</strong>`
+          }
+           res.innerHTML += `<p>Use cinto de segurança!</p>`
+          
+        }
+
+    </script>
+    
+</body>
+</html>

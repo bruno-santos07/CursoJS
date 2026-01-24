@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Idade</title>
+</head>
+<body>
+    <h1>Sistema de Cadastro</h1>
+    <p>Digite sua idade: <input type="number" id="idade" name="idade"></p>
+    <input type="button" value="Consultar" onclick="calcular()">
+    <div id="res"></div>
+    
+    <script>
+        let idade = window.document.querySelector('input#idade')
+
+        function calcular(){
+            let numero = Number(idade.value)
+            let res = window.document.getElementById('res')
+            res.innerHTML = `<p>Sua idade: ${numero}</p>`
+
+            if(numero > 1 && numero < 18){
+                res.innerHTML += '<p>Você é menor de idade!</p>'
+            }else if(numero >= 18 && numero <= 59){
+                res.innerHTML += '<p>Você é maior de idade!</p>'
+            }else if(numero >= 60){
+                res.innerHTML += '<p>Você é idoso!</p>'
+            }
+
+            res.innerHTML += `<p>“Documento obrigatório.”</p>`
+        
+
+        }
+    </script>
+    
+</body>
+</html>
