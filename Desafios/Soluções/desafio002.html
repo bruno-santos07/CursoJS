@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Frutas</title>
+</head>
+<body>
+    <h1>Menu de Frutas</h1>
+    <label for="fruta">Escolha a fruta de 1 a 4:</label>
+    <input type="number" name="fruta" id="fruta" placeholder="1 a 4" min="1" max="4">
+    <input type="button" value="Veja" onclick="veja()">
+    <div id="res"></div>
+
+    <script>
+        function veja() {
+            let fruta = document.getElementById('fruta').value
+            let res = document.getElementById('res') 
+
+            res.innerHTML = `<p><strong>Você escolheu número: ${fruta}</strong></p>`
+
+            switch(fruta){
+                case '1':
+                    res.innerHTML += `<p>Você escolheu Maçã Verde 🍎</p>`
+                    res.style.color = 'green'
+                    break;
+                case '2':
+                    res.innerHTML += `<p>Você escolheu Banana 🍌</p>`
+                    res.style.color = 'goldenrod'
+                    break;
+                case '3':
+                    res.innerHTML += `<p>Você escolheu Laranja 🍊</p>`
+                    res.style.color = 'orange'
+                    break;
+                case '4':
+                    res.innerHTML += `<p>Você escolheu Abacaxi 🍍</p>`
+                    res.style.color = 'yellow'
+                    break;
+                default:
+                    res.innerHTML += `<p>[ERRO] Opção inválida!</p>`
+                    res.style.color = 'red'
+            }
+        }
+    </script>
+</body>
+</html>

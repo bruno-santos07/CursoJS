@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+</head>
+<body>
+    <h1>Sistema de Notas</h1>
+      <div id="res"></div>
+
+      <script>
+        const res = document.querySelector('div#res')
+        let nota = Number(prompt('Digite um número de 0 a 10'))
+
+        switch(nota){
+            case 10:
+            case 9:
+                res.innerHTML = `<p>Sua nota foi: ${nota}</p>`
+                res.innerHTML += `<p><strong>Resultado:</strong> Excelente</p>`
+        break;
+            case 7:
+            case 8:
+                res.innerHTML = `<p>Sua nota foi: ${nota}</p>`
+                res.innerHTML += `<p><strong>Resultado:</strong> Bom</p>`
+        break;
+            case 6:
+            case 5:
+                res.innerHTML = `<p>Sua nota foi: ${nota}</p>`
+                res.innerHTML += `<p><strong>Resultado:</strong> Regular</p>`
+        break;
+            case 4:
+            case 3:
+            case 2:
+            case 1:
+            case 0:
+                res.innerHTML = `<p>Sua nota foi: ${nota}</p>`
+                res.innerHTML += `<p><strong>Resultado:</strong> Reprovado!</p>`
+            break;
+        default:
+            res.innerHTML = `<p><strong>Número inválido!</strong></p>`
+        }
+
+        /*
+
+                let res = document.getElementById('res')
+        let nota = Number(prompt('Digite a nota (0 a 10):'))
+
+        switch (true) {
+            case (nota === 10 || nota === 9):
+                // escreva aqui
+                break
+            case (nota === 8 || nota === 7):
+                // escreva aqui
+                break
+            case (nota === 6 || nota === 5):
+                // escreva aqui
+                break
+            case (nota >= 0 && nota <= 4):
+                // escreva aqui
+                break
+            default:
+                // escreva aqui
+        }
+                
+        */
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    <h1>Sistema de Turnos</h1>
+    <div id="res"></div>
+
+    <script>
+        let res = document.getElementById('res')
+        let letra = prompt('Digite a letra:\nM = Matutino\nV = Vespertino\nN = Noturno').toUpperCase()
+
+     switch(letra){
+        case 'M':
+            res.innerHTML = `Bom dia!`
+        break;
+        case 'V':
+            res.innerHTML = `Boa tarde!`
+        break;
+        case 'N':
+            res.innerHTML = `Boa noite!`
+        break;
+        default:
+            res.innerHTML = `Letra inválida!`
+     }
+    </script>
+    
+</body>
+</html>
