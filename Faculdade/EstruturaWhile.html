@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas e Média</title>
+</head>
+<body>
+
+    <!-- Título da página -->
+    <h1>Cálculo de Notas</h1>
+
+    <!-- Texto para o usuário saber o que digitar -->
+    <h3>Quantas notas?</h3>
+
+    <!-- Input onde o usuário informa a quantidade de notas -->
+    <input type="number" id="qtd">
+
+    <!-- Botão que chama a função calcular quando clicado -->
+    <button onclick="calcular()">Calcular</button>
+
+    <!-- Div onde o resultado será exibido -->
+    <div id="res"></div>
+
+    <script>
+        // Função principal que realiza todo o cálculo
+        function calcular() {
+
+            // Contador que controla quantas vezes o loop será repetido
+            let contador = 1
+
+            // Pega o valor digitado no input com id "qtd" e converte para número
+            // Esse valor define quantas notas o usuário vai digitar
+            let qtd = Number(document.getElementById('qtd').value)
+
+            // Variável que vai acumular a soma de todas as notas
+            let soma = 0
+
+            // Variável que guarda temporariamente cada nota digitada
+            let nota = 0
+
+            // Loop que se repete enquanto o contador for menor ou igual à quantidade de notas
+            while (contador <= qtd) {
+
+                // Pede ao usuário a nota atual (ex: nota 1, nota 2...) e converte para número
+                nota = Number(prompt(`Digite a nota ${contador}`))
+
+                // Soma a nota digitada ao total acumulado
+                soma = soma + nota
+
+                // Incrementa o contador para avançar para a próxima nota
+                // Sem isso, o loop nunca terminaria
+                contador++
+            }
+
+            // Seleciona a div onde o resultado será exibido
+            let res = document.getElementById('res')
+
+            // Coloca o resultado dentro da div usando HTML
+            res.innerHTML = `
+                <p>Soma das notas: <strong>${soma}</strong></p> 
+                <!-- Mostra a soma total das notas -->
+                
+                <p>Quantidade de notas digitadas: <strong>${qtd}</strong></p> 
+                <!-- Mostra quantas notas foram digitadas -->
+
+                <p>Média final: <strong>${(soma / qtd).toFixed(2)}</strong></p> 
+                <!-- Calcula a média dividindo a soma pela quantidade de notas -->
+                <!-- toFixed(2) limita o resultado a duas casas decimais -->
+            `
+        }
+    </script>
+
+</body>
+</html>

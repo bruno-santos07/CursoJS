@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Soma com While</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #res { margin-top: 20px; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1>Soma de Números</h1>
+    <p>Digite números e clique em "Adicionar". Digite 0 para parar.</p>
+
+    <input type="number" id="num" placeholder="Digite um número">
+    <button onclick="adicionar()">Adicionar</button>
+
+    <div id="res"></div>
+
+    <script>
+        let total = 0
+        let res = document.getElementById('res')
+        let numeros = [] // guarda todos os números
+
+        function adicionar() {
+            let n = Number(document.getElementById('num').value)
+            
+            // loop verdadeiro usando while
+            while(n !== 0){
+                numeros.push(n) // adiciona ao array
+                total += n      // soma o total
+                res.innerHTML = `Você adicionou: ${numeros.join(', ')}<br>Total até agora: <strong>${total}</strong>`
+                return // sai da função, esperando próximo clique
+            }
+
+            // se n == 0, encerra
+            res.innerHTML += `<p>✅ Você digitou 0! Soma final: <strong>${total}</strong></p>`
+        }
+    </script>
+</body>
+</html>

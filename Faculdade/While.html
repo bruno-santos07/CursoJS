@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetição</title>
+</head>
+<body>
+    <h1>Estrutura de Repetições While</h1>
+
+    Quantas repetições:
+    <input type="number" id="num1">
+    <input type="button" value="Repetições" onclick="repetir()">
+
+    <div id="res"></div>
+
+    <script>
+        function repetir() {
+            let cx1 = document.getElementById('num1')
+            let n1 = Number(cx1.value)
+            let res = document.getElementById('res')
+
+            res.innerHTML = '' // limpa o resultado antes
+
+            while (n1 <= 5) {
+                res.innerHTML += `${n1} <br>`
+                n1++ // incremento obrigatório
+            }
+
+           if (n1 > 5) {
+    res.innerHTML = `<p>❌ Digite um número menor ou igual a 5</p>`
+    return
+    }
+        }
+    </script>
+</body>
+</html>
