@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background-color: rgb(68, 125, 199);
+            color: white;
+            font: normal 18pt Arial;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Iniciando estudos DOM</h1>
+    <p>Aqui vai o Resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="div1">Clique em mim</div>
+
+    <script>
+     let titulo = document.getElementById('titulo')
+     let p0 = document.getElementsByTagName('p')[0]
+     let p1 = document.getElementsByTagName('p')[1]
+     let div1 = document.querySelector('div#div1')
+
+     titulo.innerHTML = 'Iniciando estudos DOM com <strong> JavaScript </strong> Front-End '
+     titulo.style.background = 'black'
+     titulo.style.padding = '10px'
+
+     p0.innerHTML = 'Aqui está meu progresso... JavaScript na veia.'
+     p0.style.color = 'red'
+     p0.style.background = 'yellow'
+     p0.style.padding = '5px'
+
+     p1.innerHTML = 'Meu segundo paragrafo provando que eu sei programar.'
+     p1.style.color = 'green'
+     p1.style.background = 'white'
+     p1.style.padding = '5px'
+
+     div1.innerHTML = 'Por último usando QuerySelector()'
+     div1.style.color = 'white'
+     div1.style.background = 'blue'
+     div1.style.padding = '5px'
+
+
+</script>
+</body>
+</html>
