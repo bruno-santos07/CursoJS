@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body{
+            font: normal 15pt Arial;
+        }
+        input{
+            padding: 5px;
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2"><br>
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res">Resultado:</div>
+<br>
+    <input type="number" name="numb1" id="numb1"> -
+    <input type="number" name="numb2" id="numb2"><br>
+    <input type="button" value="Subtrair" onclick="subtrair()">
+    <div id="resposta">Resultado:</div>
+
+    <script>
+        function somar(){
+            let tn1 = window.document.getElementById('txtn1')
+            let tn2 = document.getElementById('txtn2')
+            let n1 = Number(tn1.value)
+            let n2 = Number(tn2.value)
+            let soma = n1 + n2
+            let resultado = window.document.getElementById('res')
+
+
+            resultado.innerHTML = `A Soma entre ${n1} e ${n2} é igual a <strong>${soma}</strong> `
+        }
+
+        function subtrair(){
+            let num1 = window.document.getElementById('numb1')
+            let num2 = document.getElementById('numb2')
+            let n1 = Number(num1.value)
+            let n2 = Number(num2.value)
+            let subtrair = n1 - n2
+            let resultado = window.document.getElementById('resposta')
+
+            resultado.innerHTML = `A subtração entre ${n1} e ${n2} é igual a <strong>${subtrair}</strong> `
+        }
+    </script>
+</body>
+</html>
