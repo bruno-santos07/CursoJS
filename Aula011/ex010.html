@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        body{
+            font: normal 16pt Arial;
+            margin: 10px;
+        }
+        h1{
+            background-color: red;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+     Velocidade do carro: <input type="number" name="vel" id="vel" min="0" max="200" required>
+    <input type="button" value="Verificar" onclick="calcular()">
+    <p id="mensagem"></p>
+    <div id="res">Resultado:</div>
+
+    <script>
+        function calcular(){
+            let vel = window.document.getElementById('vel')
+            let txtvel = Number(vel.value)
+            let res = window.document.getElementById('res')
+            let mensagem = window.document.querySelector('p#mensagem')
+
+            if(txtvel >= 61){
+                res.innerHTML = (`Sua velcidade ${txtvel}Km/h Você está acima da velocidade permitida!`)
+                res.style.color = 'red'
+            }else if(txtvel < 0){
+                res.innerHTML = (`<strong>[ERRO]</strong>: Digite uma velocidade válida!`)
+                res.style.color = 'red'
+            }else{
+                res.innerHTML = (`Sua velocidade ${txtvel}Km/h Você está dentro da velocidade permitida`)
+                res.style.color = 'green'
+            }
+        }
+
+        mensagem.innerHTML = `<p><strong>Atenção:</strong> o uso do cinto de segurança é indispensavel!</p>`
+        mensagem.style.color = 'blue'
+        
+    </script>
+    
+</body>
+</html>
