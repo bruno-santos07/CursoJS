@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>Desafio de switch case</h1>
+    <input type="number" name="numb" id="numb" mix="0" max="6" required>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">Resultado:</div>
+
+    <script>
+    function verificar() {
+    let numSem = document.getElementById('numb')
+    let n1 = Number(numSem.value)
+    let res = document.getElementById('res')
+
+    switch (n1) {
+        case 0:
+            res.innerHTML = 'Domingo'
+            break
+        case 1:
+            res.innerHTML = 'Segunda-feira'
+            break
+        case 2:
+            res.innerHTML = 'Resultado: Terça-feira'
+            break
+        case 3:
+            res.innerHTML = 'Resultado: Quarta-feira'
+            break
+        case 4:
+            res.innerHTML = 'Resultado: Quinta-feira'
+            break
+        case 5:
+            res.innerHTML = 'Resultado: Sexta-feira'
+            break
+        case 6:
+            res.innerHTML = 'Resultado: Sábado'
+            break
+        default:
+            res.innerHTML = 'Resultado: Dia inválido!'
+    }
+}
+    </script>
+    
+</body>
+</html>
