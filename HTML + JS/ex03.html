@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>
+    // Recebe o nome do aluno e valida
+    let nomeAluno;
+    do {
+        nomeAluno = prompt('Digite o nome do aluno: ');
+    } while (/\d/.test(nomeAluno)); 
+    alert("Nome válido: " + nomeAluno);
+
+    // Cria o array de notas
+    let notas = [];
+    for (let i = 0; i < 2; i++) {
+        let nota;
+        do {
+            nota = Number(prompt(`Digite a nota ${i + 1} (0 a 10):`));
+        } while (nota < 0 || nota > 10 || isNaN(nota));
+        notas.push(nota);
+    }
+    alert('Notas digitadas: ' + notas);
+
+    // Calcula a média
+    let soma = 0;
+    for (let i = 0; i < notas.length; i++) {
+        soma += notas[i];
+    }
+    let media = soma / notas.length;
+
+    // Define o status do aluno
+    let status = media >= 7 ? "Aprovado" : "Reprovado";
+
+    // Mostra o resultado final
+    alert(`${nomeAluno} - Média: ${media.toFixed(1)} - ${status}`);
+    </script>
+</body>
+</html>

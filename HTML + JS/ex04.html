@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pontuação do Time</title>
+</head>
+<body>
+<script>
+// 1️⃣ Perguntar quantos jogadores estão no time
+let totalJogadores;
+do {
+    totalJogadores = Number(prompt("Quantos jogadores estão no time?"));
+} while (isNaN(totalJogadores) || totalJogadores <= 0);
+
+// 2️⃣ Criar array para guardar os jogadores
+let time = [];
+
+// 3️⃣ Cadastro de cada jogador
+for (let i = 0; i < totalJogadores; i++) {
+    let nome;
+    do {
+        nome = prompt(`Digite o nome do jogador ${i + 1}:`);
+    } while (!nome || /\d/.test(nome)); // valida nome sem números
+
+    let pontos;
+    do {
+        pontos = Number(prompt(`Quantos pontos ${nome} marcou?`));
+    } while (isNaN(pontos) || pontos < 0); // valida pontos
+
+    // Adiciona jogador como objeto no array
+    time.push({ nome: nome, pontos: pontos });
+}
+
+// 4️⃣ Mostrar todos os jogadores e pontos
+console.log("=== Pontuação do Time ===");
+time.forEach(jogador => {
+    console.log(`${jogador.nome} - Pontos: ${jogador.pontos}`);
+});
+
+// 5️⃣ Encontrar maior pontuador
+let maiorPontuador = time[0];
+for (let i = 1; i < time.length; i++) {
+    if (time[i].pontos > maiorPontuador.pontos) {
+        maiorPontuador = time[i];
+    }
+}
+console.log(`\nMaior pontuador: ${maiorPontuador.nome} com ${maiorPontuador.pontos} pontos!`);
+
+// 6️⃣ Calcular pontuação total e média
+let totalPontos = 0;
+for (let i = 0; i < time.length; i++) {
+    totalPontos += time[i].pontos;
+}
+let mediaPontos = totalPontos / time.length;
+
+console.log(`Pontuação total do time: ${totalPontos}`);
+console.log(`Média de pontos por jogador: ${mediaPontos.toFixed(1)}`);
+</script>
+</body>
+</html>
