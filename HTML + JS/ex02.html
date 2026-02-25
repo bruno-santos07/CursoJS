@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        div{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form>
+        <div>
+            <label for="nome" id="nome">Nome</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email" req>E-mail:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <input type="button" value="Enviar" onclick="enviar()" required>
+    </form>
+    <div id="resposta"></div>
+    <script>
+        function enviar(){
+            let name = window.document.getElementById('name')
+            let email = window.document.getElementById('email')
+            let resname = (name.value)
+            let resemail = (email.value)
+
+            let res = window.document.getElementById('resposta')
+
+            resposta.innerHTML = `Nome: ${resname} <br>`
+            resposta.innerHTML += `Email:${resemail}`
+        }
+       
+    </script>
+    
+</body>
+</html>

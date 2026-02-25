@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Simples</title>
+    <style>
+        input{
+            padding: 10px;
+            margin: 2px;
+            border: solid black 2px;
+            color: black;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Criando botão</h1>
+        <input type="submit" value="Botão" id="botao">
+    </div>
+
+    <script>
+        let botao = window.document.getElementById('botao')
+        botao.addEventListener('click', function() { alert('Botão clicado!'); })
+    </script>
+</body>
+</html>
